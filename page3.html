@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="page3.css"> <!-- Lien vers le CSS -->
+</head>
+<body>
+    <div class="container">
+        <center><h1>Inscription</h1></center>
+        <div id="authSection">
+            <input type="text" id="username" placeholder="Nom d'utilisateur">
+            <br>
+            <br>
+            <input class="A1" type="password" id="password" placeholder="Mot de passe">
+            <br>
+            <br>
+            <center><input class="B2" type="button" value="Se connecter" onclick="login()"></center>
+            <br>
+            <br>
+            <center><input class="B1" type="button" value="S'inscrire" onclick="register()"></center>
+            <center><p id="authMessage" class="error"></p></center>
+        </div>
+    </div>
+    <center>
+
+    <script>
+        function register() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            if (username.trim() === "" || password.trim() === "") {
+                showMessage("Veuillez entrer un nom d'utilisateur et un mot de passe.", true);
+                return;
+            }
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+            showMessage("Inscription réussie ! Vous pouvez maintenant vous connecter.", false);
+        }
+
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+
+            if (username === storedUsername && password === storedPassword) {
+                // Redirige vers la page de discussion
+                window.location.href = "page5.html";
+            } else {
+                showMessage("Nom d'utilisateur ou mot de passe incorrect.", true);
+            }
+        }
+
+        function showMessage(message, isError) {
+            const messageElement = document.getElementById("authMessage");
+            messageElement.textContent = message;
+            messageElement.className = isError ? "error" : "success";
+        }
+    </script>
+    </center>
+</body>
+</html>

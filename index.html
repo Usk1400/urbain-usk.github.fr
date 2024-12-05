@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIGN++</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+    <script>
+        function validateForm() {
+            var nom = document.forms["contactForm"]["nom"].value;
+            var adresse = document.forms["contactForm"]["adresse"].value;
+
+            if (nom === "" || adresse === "") {
+                alert("Veuillez remplir tous les champs !");
+                return false; // Empêche l'envoi du formulaire
+            } else {
+                alert("Formulaire envoyé avec succès !");
+                return true; // Autorise l'envoi du formulaire
+            }
+        }
+
+        function goToPage2() {
+            window.location.href = "page2.html";
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h2 style="text-align: center; color: #0011ff;">USK MOTIVATOR</h2>
+        <br>
+        <div class="container">
+            <fieldset>
+                <legend>ENVOIE DE FORMULAIRE</legend>
+                <form name="contactForm" method="post" action="mailto:urbainkabamba287@gmail.com" onsubmit="return validateForm()">
+                    <input type="text" name="nom" placeholder="votre nom" required>
+                    <textarea name="adresse" cols="35" rows="3" placeholder="votre adresse" required></textarea>
+                    <input type="submit" value="ENVOYER">
+                    <input type="button" value="Passer" onclick="goToPage2()">
+                </form>
+            </fieldset>
+        </div>
+    </header>
+</body>
+
+</html>

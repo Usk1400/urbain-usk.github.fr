@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion</title>
+    <link rel="stylesheet" href="page6.css"> <!-- Lien vers le CSS -->
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h1></h1>
+
+        <div id="commentSection">
+            <center><h2>Duscussion </h2></center>
+            <div id="commentsList"></div>
+            <div class="comment-form">
+                <textarea id="comment" rows="4" placeholder="Écrivez un message"></textarea>
+                <br>
+                <br>
+                <br>
+                <center><input type="button" value="ENVOYER" onclick="addComment()"></center>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = localStorage.getItem("username");
+
+        if (!currentUser) {
+            alert("Vous devez être connecté pour voir cette page !");
+            window.location.href = "inscription.html"; // Redirige vers la page d'inscription
+        }
+
+        function addComment() {
+            const commentText = document.getElementById("comment").value;
+            if (commentText.trim() !== "") {
+                const commentsList = document.getElementById("commentsList");
+                const comment = document.createElement("p");
+                comment.textContent = `${currentUser}: ${commentText}`;
+                commentsList.appendChild(comment);
+                document.getElementById("comment").value = ""; // Réinitialise le champ de commentaire
+            } else {
+                alert("Veuillez écrire un commentaire avant d'ajouter !");
+            }
+        }
+    </script>
+</body>
+</html>

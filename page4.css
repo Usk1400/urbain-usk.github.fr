@@ -1,0 +1,44 @@
+body {
+    background-color: #000000; /* Couleur de fond de la page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Remplit la hauteur de l'écran */
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    padding: 10px; /* Ajoute de l'espace autour de l'image */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 0 15px rgb(255, 0, 0); /* Ombre dorée */
+    transition: box-shadow 0.3s ease; /* Transition pour l'ombre */
+}
+
+.image-container:hover {
+    box-shadow: 0 0 25px rgb(4, 0, 255); /* Ombre plus forte au survol */
+}
+
+img {
+    border-radius: 10px; /* Coins arrondis pour l'image */
+}
+
+.A1 {
+    background-color: #0026ff; /* Couleur du bouton au survol */
+    width: 100%;
+    font-size: 15px;
+    height: 40px;
+    border-radius: 10px;
+    color: rgb(248, 248, 248);
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    
+    
+    
+    
+}
+input[type="button"]:hover {
+    background-color: #ff0000; /* Couleur plus sombre au survol */
+}

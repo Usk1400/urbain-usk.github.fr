@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Suivante</title>
+    <link rel="stylesheet" href="page2.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Merci de votre envoi !</h1>
+            <p>Votre demande a été envoyée avec succès. Nous vous contacterons bientôt.</p>
+            <p>Si vous avez d'autres questions, n'hésitez pas à nous les poser.</p>
+            <b><input type="button" value="SUIVANT" onclick="goBack()"></b>
+        </div>
+    </header>
+
+    <script>
+        function goBack() {
+            window.location.href = "page3.html"; // Remplacez par le nom de votre fichier HTML de formulaire
+        }
+    </script>
+</body>
+
+</html>
